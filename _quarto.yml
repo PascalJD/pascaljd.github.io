@@ -34,5 +34,5 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
-    include-after-body: 
-      - includes/toggle.html
+    # include-after-body: 
+    #   - includes/toggle.html
