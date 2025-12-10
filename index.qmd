@@ -1,0 +1,24 @@
+---
+link-bibliography: true
+bibliography: publications.bib
+csl: csl/publications.csl
+nocite: |
+  @*
+---
+
+## Bio
+
+::: {.cardish}
+👋 I’m Pascal Jutras‑Dubé, a PhD student in Computer Science at Purdue University (advised by [Ruqi Zhang](https://ruqizhang.github.io){target="_blank" rel="noopener"}).  I study sampling and generative modeling through learned stochastic processes, like diffusions and jump processes, and their applications.  
+
+Outside the lab, I co-founded [Almost Surely](https://almost-surely.com){target="_blank" rel="noopener"}, a fashion brand for the geek community.
+And when I need a reset, I make fresh pasta: flour, eggs, a little patience: an experiment you can taste.
+
+**Now seeking:** Summer 2026 research / applied scientist PhD internships (ML, generative modeling, sampling, planning, statistics).
+:::
+
+<br>
+
+## Publications 
+::: {#refs}
+:::

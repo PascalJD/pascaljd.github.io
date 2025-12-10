@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text">
+  <info>
+    <title>PascalJD (date-desc, notes, linked titles)</title>
+    <id>https://pascaljd.github.io/csl/publications</id>
+    <link href="https://pascaljd.github.io/csl/publications" rel="self"/>
+    <category citation-format="author-date"/>
+    <updated>2025-12-08</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</rights>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name initialize-with=". " delimiter=", " delimiter-precedes-last="always"/>
+      <et-al term="et-al" font-style="italic"/>
+    </names>
+  </macro>
+
+  <macro name="year">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <!-- Title is NOT bold -->
+  <macro name="title">
+    <text variable="title"/>
+  </macro>
+
+  <macro name="venue">
+    <choose>
+      <if variable="container-title">
+        <text variable="container-title" font-style="italic"/>
+      </if>
+    </choose>
+  </macro>
+
+  <!-- Notes: same font style, in square brackets -->
+  <macro name="note">
+    <choose>
+      <if variable="note">
+        <text variable="note" prefix=" [" suffix="]"/>
+      </if>
+    </choose>
+  </macro>
+
+  <citation et-al-min="3" et-al-use-first="1">
+    <layout prefix="(" suffix=")" delimiter="; ">
+      <group delimiter=", ">
+        <text macro="author"/>
+        <text macro="year"/>
+      </group>
+    </layout>
+  </citation>
+
+  <bibliography hanging-indent="False" et-al-min="6" et-al-use-first="3">
+    <!-- Newest first -->
+    <sort>
+      <key variable="issued" sort="descending"/>
+      <key variable="author"/>
+      <key variable="title"/>
+    </sort>
+
+    <layout suffix=".">
+      <group delimiter=". ">
+        <text macro="author"/>
+        <group delimiter=" ">
+          <text macro="year" prefix="(" suffix=")"/>
+          <text macro="title"/>
+        </group>
+        <text macro="venue"/>
+      </group>
+      <text macro="note"/>
+    </layout>
+  </bibliography>
+</style>

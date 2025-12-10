@@ -1,0 +1,38 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - cv.pdf
+    - assets/**
+
+website:
+  title: "Pascal Jutras-Dubé"
+  navbar:
+    left:
+      - text: Research
+        href: index.qmd
+      - text: Almost Surely
+        href: studio.qmd
+      - text: CV
+        href: cv.pdf
+    tools:
+      - icon: github
+        href: https://github.com/PascalJD
+        aria-label: GitHub
+      - icon: mortarboard
+        href: https://scholar.google.com/citations?hl=en&user=cWjKkUQAAAAJ
+        aria-label: Google Scholar
+      - icon: envelope
+        href: mailto:pjutrasd@purdue.edu
+        aria-label: Email
+      - icon: linkedin
+        href: https://www.linkedin.com/in/pascal-jutras-dube/
+        aria-label: LinkedIn
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    include-after-body: 
+      - includes/toggle.html

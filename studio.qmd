@@ -1,0 +1,47 @@
+---
+title: "Almost Surely"
+toc: false
+---
+
+::: {.cardish}
+Almost Surely is a fashion brand that views fashion through the lens of technology. We merge fashion with ideas from generative design, internet culture, and 3D aesthetics to create pieces that feel modern. 
+
+<a href="https://almost-surely.com" target="_blank" rel="noopener">Visit almost-surely.com</a>
+:::
+
+<br>
+
+## Concepts
+
+::: {.studio-grid}
+
+::: {.studio-card}
+### L13_512_64_base19 Jacquard Sweater
+
+I trained a GAN and explored internal neuron activations as a “design space”; the final face-like motif came from those activation patterns. The design is embedded in a 4-colour yarn-dyed jacquard fully-fashioned sweater of Extrafine Merino Wool.
+
+![](assets/knit_mockup.png){fig-alt="Mockup of a black 4-color jacquard crewneck sweater with a face motif."}
+:::
+
+::: {.studio-card}
+### Delete Tee
+
+This heavyweight t-shirt features a design of a 90s beige "Delete" key on a soothing blue fabric. This key, seemingly simple, carries the weight of transformation. A blend of vintage aesthetics and contemporary fashion, the Delete Tee is a reminder that every end births a start.
+
+![](assets/delete.JPG){fig-alt="Delete Tee."}
+:::
+
+::: {.studio-card}
+### Certainty Tee
+
+The Certainty Tee is a heavyweight red t-shirt featuring a gradual list of levels of certainty, progressing from "Yes" to "Definitely Not." From absolute confidence to hesitant ambiguity, and the finality of "Impossibly," the Certainty Tee takes you on a journey through the nuances of assurance and doubt.
+![](assets/certainty.jpg){fig-alt="Certainty Tee."}
+:::
+
+::: {.studio-card}
+### Diffusion2023 Tee
+
+This pale heather gray heavyweight t-shirt is the first I've made. The design showcases a heart-shaped jewel box adorned with "AS" breloques.
+
+![](assets/pearl.jpg){fig-alt="Diffusion Tee."}
+:::  
