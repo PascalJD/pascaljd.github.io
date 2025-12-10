@@ -1,47 +1,5 @@
 [
   {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "Jutras-Dubé, Pascal, M. B. Al-Khasawneh, Z. Yang, J. Bas, F. Bastin, and C. Cirillo. 2024. “Copula-Based Transferable Models for Synthetic Population Generation.” Transportation Research Part C.\n\n\nJutras-Dubé, Pascal, P. Pynadath, and R. Zhang. 2025. “Single-Step Consistent Diffusion Samplers.” https://arxiv.org/abs/2502.07579.\n\n\nJutras-Dubé, Pascal, J. Zhang, Z. Wang, and R. Zhang. 2025. “One-Step Diffusion Samplers via Self-Distillation and Deterministic Flow.” https://arxiv.org/abs/2512.05251.\n\n\nJutras-Dubé, Pascal, R. Zhang, and A. Bera. 2024. “Adaptive Planning with Generative Models Under Uncertainty.” In International Conference on Intelligent Robots and Systems (IROS).\n\n\nMesana, P., Pascal Jutras-Dubé, J. Crowe, G. Vial, and G. Caporossi. 2024. “Evaluating the Risk of Re-Identification in Data Release Strategies: An Attacker-Centric Approach.” In Hawaii International Conference on System Sciences (HICSS).\n\n\nMesana, P., Pascal Jutras-Dubé, J. Crowe, G. Vial, G. Caporossi, and S. Gambs. 2025. “Measuring Privacy/Utility Tradeoffs of Format-Preserving Strategies for Data Release.” Journal of Business Analytics.\n\n\nPunyamoorty, P., Pascal Jutras-Dubé, R. Zhang, V. Aggarwal, D. Conover, and A. Bera. 2025. “Dynamic Obstacle Avoidance Through Uncertainty-Based Adaptive Planning with Diffusion.” In International Conference on Intelligent Robots and Systems (IROS)."
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Project page: https://pascaljd.github.io/ensemble-adaptive-policy/\n\nCode: (add repo link here)\n\n\n\n\n\n\nCode: https://github.com/PascalJD/copulapopgen"
-  },
-  {
-    "objectID": "projects.html#research-projects",
-    "href": "projects.html#research-projects",
-    "title": "Projects",
-    "section": "",
-    "text": "Project page: https://pascaljd.github.io/ensemble-adaptive-policy/\n\nCode: (add repo link here)\n\n\n\n\n\n\nCode: https://github.com/PascalJD/copulapopgen"
-  },
-  {
-    "objectID": "projects.html#notes",
-    "href": "projects.html#notes",
-    "title": "Projects",
-    "section": "Notes",
-    "text": "Notes\nIf you have repos with good READMEs, this page can just be a curated list (3–6 items) with a one-liner + links."
-  },
-  {
-    "objectID": "studio.html",
-    "href": "studio.html",
-    "title": "Almost Surely",
-    "section": "",
-    "text": "Almost Surely is a fashion brand that views fashion through the lens of technology. We merge fashion with ideas from generative design, internet culture, and 3D aesthetics to create pieces that feel modern.\nVisit almost-surely.com"
-  },
-  {
-    "objectID": "studio.html#what-youll-find-here",
-    "href": "studio.html#what-youll-find-here",
-    "title": "Studio (Almost Surely)",
-    "section": "What you’ll find here",
-    "text": "What you’ll find here\n\nNew drops + collections\nDesign process notes (from concept → generation → production)\nVisual experiments that blur “tooling” and “taste”\n\nWebsite: https://almost-surely.com"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Pascal Jutras-Dubé",
@@ -49,39 +7,11 @@
     "text": "👋 I’m Pascal Jutras‑Dubé, a PhD student in Computer Science at Purdue University (advised by Ruqi Zhang). I study sampling and generative modeling through learned stochastic processes, like diffusions and jump processes, and their applications.\nOutside the lab, I co-founded Almost Surely, a fashion brand for the geek community. And when I need a reset, I make fresh pasta: flour, eggs, a little patience: an experiment you can taste.\nNow seeking: Summer 2026 research / applied scientist PhD internships (ML, generative modeling, sampling, planning, statistics)."
   },
   {
-    "objectID": "index.html#now",
-    "href": "index.html#now",
-    "title": "Research",
-    "section": "Now",
-    "text": "Now\n\nSeeking: Summer 2026 research / applied scientist internships (ML, generative modeling, sampling, robotics planning).\nRecent: one-step diffusion samplers (arXiv:2512.05251)."
-  },
-  {
-    "objectID": "index.html#featured",
-    "href": "index.html#featured",
-    "title": "Research",
-    "section": "Featured",
-    "text": "Featured\n\nOne-Step Diffusion Samplers via Self-Distillation and Deterministic Flow — arXiv:2512.05251\n\nSingle-Step Consistent Diffusion Samplers — arXiv:2502.07579\n\nAdaptive Planning with Generative Models under Uncertainty (IROS 2024) — project page: https://pascaljd.github.io/ensemble-adaptive-policy/"
-  },
-  {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "Research",
-    "section": "Contact",
-    "text": "Contact\n\nEmail: pjutrasd@purdue.edu\nGoogle Scholar: https://scholar.google.com/citations?hl=en&user=cWjKkUQAAAAJ\nGitHub: https://github.com/PascalJD\nStudio: https://almost-surely.com"
-  },
-  {
-    "objectID": "publications.html#selected-publications",
-    "href": "publications.html#selected-publications",
-    "title": "Publications",
+    "objectID": "index.html#bio",
+    "href": "index.html#bio",
+    "title": "Pascal Jutras-Dubé",
     "section": "",
-    "text": "Jutras-Dubé et al. (2025)\nPunyamoorty et al. (2025)\nJutras-Dubé, Zhang, and Bera (2024)"
-  },
-  {
-    "objectID": "publications.html#full-list",
-    "href": "publications.html#full-list",
-    "title": "Publications",
-    "section": "Full list",
-    "text": "Full list\n\n\nJutras-Dubé, Pascal, M. B. Al-Khasawneh, Z. Yang, J. Bas, F. Bastin, and C. Cirillo. 2024. “Copula-Based Transferable Models for Synthetic Population Generation.” Transportation Research Part C.\n\n\nJutras-Dubé, Pascal, P. Pynadath, and R. Zhang. 2025. “Single-Step Consistent Diffusion Samplers.” https://arxiv.org/abs/2502.07579.\n\n\nJutras-Dubé, Pascal, J. Zhang, Z. Wang, and R. Zhang. 2025. “One-Step Diffusion Samplers via Self-Distillation and Deterministic Flow.” https://arxiv.org/abs/2512.05251.\n\n\nJutras-Dubé, Pascal, R. Zhang, and A. Bera. 2024. “Adaptive Planning with Generative Models Under Uncertainty.” In International Conference on Intelligent Robots and Systems (IROS).\n\n\nMesana, P., Pascal Jutras-Dubé, J. Crowe, G. Vial, and G. Caporossi. 2024. “Evaluating the Risk of Re-Identification in Data Release Strategies: An Attacker-Centric Approach.” In Hawaii International Conference on System Sciences (HICSS).\n\n\nMesana, P., Pascal Jutras-Dubé, J. Crowe, G. Vial, G. Caporossi, and S. Gambs. 2025. “Measuring Privacy/Utility Tradeoffs of Format-Preserving Strategies for Data Release.” Journal of Business Analytics.\n\n\nPunyamoorty, P., Pascal Jutras-Dubé, R. Zhang, V. Aggarwal, D. Conover, and A. Bera. 2025. “Dynamic Obstacle Avoidance Through Uncertainty-Based Adaptive Planning with Diffusion.” In International Conference on Intelligent Robots and Systems (IROS)."
+    "text": "👋 I’m Pascal Jutras‑Dubé, a PhD student in Computer Science at Purdue University (advised by Ruqi Zhang). I study sampling and generative modeling through learned stochastic processes, like diffusions and jump processes, and their applications.\nOutside the lab, I co-founded Almost Surely, a fashion brand for the geek community. And when I need a reset, I make fresh pasta: flour, eggs, a little patience: an experiment you can taste.\nNow seeking: Summer 2026 research / applied scientist PhD internships (ML, generative modeling, sampling, planning, statistics)."
   },
   {
     "objectID": "index.html#publications",
@@ -91,17 +21,17 @@
     "text": "Publications\n\n\nP. Jutras-Dubé, P. Pynadath, R. Zhang. (2025) Single-step consistent diffusion samplers [Frontiers in Probabilistic Inference Workshop at ICLR].\n\n\nP. Jutras-Dubé, J. Zhang, Z. Wang, R. Zhang. (2025) One-step diffusion samplers via self-distillation and deterministic flow [Under review].\n\n\nP. Mesana, P. Jutras-Dubé, J. Crowe, et al. (2025) Measuring privacy/utility tradeoffs of format-preserving strategies for data release. Journal of Business Analytics.\n\n\nP. Punyamoorty, P. Jutras-Dubé, R. Zhang, et al. (2025) Dynamic obstacle avoidance through uncertainty-based adaptive planning with diffusion. International conference on intelligent robots and systems (IROS) [Co-first authors].\n\n\nP. Jutras-Dubé, M. B. Al-Khasawneh, Z. Yang, et al. (2024) Copula-based transferable models for synthetic population generation. Transportation Research Part C.\n\n\nP. Jutras-Dubé, R. Zhang, A. Bera. (2024) Adaptive planning with generative models under uncertainty. International conference on intelligent robots and systems (IROS).\n\n\nP. Mesana, P. Jutras-Dubé, J. Crowe, G. Vial, G. Caporossi. (2024) Evaluating the risk of re-identification in data release strategies: An attacker-centric approach. Hawaii international conference on system sciences (HICSS)."
   },
   {
+    "objectID": "studio.html",
+    "href": "studio.html",
+    "title": "Almost Surely",
+    "section": "",
+    "text": "Almost Surely is a fashion brand that views fashion through the lens of technology. We merge fashion with ideas from generative design, internet culture, and 3D aesthetics to create pieces that feel modern.\nVisit almost-surely.com"
+  },
+  {
     "objectID": "studio.html#concepts",
     "href": "studio.html#concepts",
     "title": "Almost Surely",
     "section": "Concepts",
     "text": "Concepts\n\n\nL13_512_64_base19 Jacquard Sweater\nI trained a GAN and explored internal neuron activations as a “design space”; the final face-like motif came from those activation patterns. The design is embedded in a 4-colour yarn-dyed jacquard fully-fashioned sweater of Extrafine Merino Wool.\n\n\n\nDelete Tee\nThis heavyweight t-shirt features a design of a 90s beige “Delete” key on a soothing blue fabric. This key, seemingly simple, carries the weight of transformation. A blend of vintage aesthetics and contemporary fashion, the Delete Tee is a reminder that every end births a start.\n\n\n\nCertainty Tee\nThe Certainty Tee is a heavyweight red t-shirt featuring a gradual list of levels of certainty, progressing from “Yes” to “Definitely Not.” From absolute confidence to hesitant ambiguity, and the finality of “Impossibly,” the Certainty Tee takes you on a journey through the nuances of assurance and doubt. \n\n\nDiffusion2023 Tee\nThis pale heather gray heavyweight t-shirt is the first I’ve made. The design showcases a heart-shaped jewel box adorned with “AS” breloques."
-  },
-  {
-    "objectID": "index.html#bio",
-    "href": "index.html#bio",
-    "title": "Pascal Jutras-Dubé",
-    "section": "",
-    "text": "👋 I’m Pascal Jutras‑Dubé, a PhD student in Computer Science at Purdue University (advised by Ruqi Zhang). I study sampling and generative modeling through learned stochastic processes, like diffusions and jump processes, and their applications.\nOutside the lab, I co-founded Almost Surely, a fashion brand for the geek community. And when I need a reset, I make fresh pasta: flour, eggs, a little patience: an experiment you can taste.\nNow seeking: Summer 2026 research / applied scientist PhD internships (ML, generative modeling, sampling, planning, statistics)."
   }
 ]

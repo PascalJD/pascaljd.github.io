@@ -1,26 +1,27 @@
-(function () {
-  const key = "pascaljd-site-mode";
-  const btn = document.createElement("button");
-  btn.id = "modeToggle";
-  btn.type = "button";
+(() => {
+  const KEY = "pascaljd-site-mode";
 
   function apply(mode) {
     document.body.classList.toggle("atelier", mode === "atelier");
-    btn.textContent = mode === "atelier" ? "Light Theme" : "Dark Theme";
-    btn.setAttribute("aria-label", btn.textContent);
   }
 
-  const stored = localStorage.getItem(key);
-  const initial = stored === "atelier" ? "atelier" : "research";
-  apply(initial);
+  document.addEventListener("DOMContentLoaded", () => {
+    const stored = localStorage.getItem(KEY);
+    const initial = stored || "lab";
+    apply(initial);
 
-  btn.addEventListener("click", function () {
-    const next = document.body.classList.contains("atelier") ? "research" : "atelier";
-    localStorage.setItem(key, next === "atelier" ? "atelier" : "research");
-    apply(next);
-  });
+    const btn = document.createElement("button");
+    btn.className = "mode-toggle";
+    btn.type = "button";
+    btn.setAttribute("aria-label", "Toggle Research/Studio mode");
+    btn.textContent = "Lab ↔ Atelier";
 
-  document.addEventListener("DOMContentLoaded", function () {
+    btn.addEventListener("click", () => {
+      const next = document.body.classList.contains("atelier") ? "lab" : "atelier";
+      apply(next);
+      localStorage.setItem(KEY, next);
+    });
+
     document.body.appendChild(btn);
   });
 })();
