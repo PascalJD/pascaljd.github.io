@@ -53,13 +53,10 @@
     </layout>
   </citation>
 
-  <bibliography hanging-indent="False" et-al-min="6" et-al-use-first="3">
-    <!-- Newest first -->
-    <sort>
-      <key variable="issued" sort="descending"/>
-      <key variable="author"/>
-      <key variable="title"/>
-    </sort>
+  <bibliography hanging-indent="False" et-al-min="999" et-al-use-first="3">
+    <key variable="issued" sort="descending"/>
+    <key variable="author"/>
+    <key variable="title"/>
 
     <layout suffix=".">
       <group delimiter=". ">

@@ -3,13 +3,21 @@ link-bibliography: true
 bibliography: publications.bib
 csl: csl/publications.csl
 nocite: |
-  @*
+  @jutrasdube2025osds
+  @punyamoorty2025dynamic
+  @jutrasdube2025singlestep
+  @mesana2025measuring
+  @jutrasdube2024copula
+  @jutrasdube2024adaptive
+  @mesana2024evaluating
 ---
 
 ## Bio
 
 ::: {.cardish}
-👋 I’m Pascal Jutras‑Dubé, a PhD student in Computer Science at Purdue University (advised by [Ruqi Zhang](https://ruqizhang.github.io){target="_blank" rel="noopener"}).  I study sampling and generative modeling through learned stochastic processes, like diffusions and jump processes, and their applications.  
+👋 I’m Pascal Jutras‑Dubé, a PhD student in Computer Science at Purdue University (advised by [Ruqi Zhang](https://ruqizhang.github.io){target="_blank" rel="noopener"}).
+I study sampling and generative modeling through learned stochastic processes, like diffusions and jump processes, and their applications.
+I’m currently interested in the theoretical foundations, parallel decoding, test-time alignment, and multimodality of diffusion large language models (dLLMs).
 
 Outside the lab, I co-founded [Almost Surely](https://almost-surely.com){target="_blank" rel="noopener"}, a fashion brand for the geek community.
 And when I need a reset, I make fresh pasta: flour, eggs, a little patience: an experiment you can taste.
