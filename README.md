@@ -20,5 +20,3 @@ git push
 
 Then in GitHub repo settings:
 Settings → Pages → **Deploy from a branch** → Branch: `main` → Folder: `/docs`
-
-If you don't see `cv.pdf` on the deployed site, make sure it's listed under `project: resources:` in `_quarto.yml`.
