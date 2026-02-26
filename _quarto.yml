@@ -3,6 +3,7 @@ project:
   output-dir: docs
   resources:
     - cv.pdf
+    - script.js
     - assets/**
 
 website:
@@ -34,5 +35,5 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
-    # include-after-body: 
-    #   - includes/toggle.html
+    include-after-body: 
+      - includes/toggle.html

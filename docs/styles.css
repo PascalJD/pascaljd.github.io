@@ -55,7 +55,8 @@ a:hover{ opacity: .9; }
 }
 
 /* Floating toggle button */
-#modeToggle{
+#modeToggle,
+.mode-toggle{
   position: fixed;
   right: 1rem;
   bottom: 1rem;
@@ -71,8 +72,197 @@ a:hover{ opacity: .9; }
 
   box-shadow: 0 12px 30px rgba(0,0,0,.12);
 }
-#modeToggle:hover{ transform: translateY(-1px); }
-#modeToggle:active{ transform: translateY(0px); }
+#modeToggle:hover,
+.mode-toggle:hover{ transform: translateY(-1px); }
+#modeToggle:active,
+.mode-toggle:active{ transform: translateY(0px); }
+
+/* Cursor-tracking pigeon mascot */
+.cursor-pigeon{
+  position: fixed;
+  left: .95rem;
+  bottom: .8rem;
+  width: 132px;
+  height: 108px;
+  z-index: 9998;
+  pointer-events: auto;
+  user-select: none;
+  cursor: pointer;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.22));
+}
+
+.cursor-pigeon .pigeon-bob{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: pigeon-bob 2.6s ease-in-out infinite;
+}
+
+.cursor-pigeon .pigeon-quote{
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 4px);
+  max-width: 210px;
+  width: max-content;
+  padding: .45rem .6rem;
+  border-radius: 12px;
+  border: 1px solid rgba(17,17,20,.16);
+  background: color-mix(in oklab, var(--card), white 16%);
+  color: var(--fg);
+  font-size: .78rem;
+  line-height: 1.25;
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+  opacity: 0;
+  transform: translate(-50%, 8px) scale(.96);
+  transition: opacity 180ms ease, transform 180ms ease;
+  pointer-events: none;
+  white-space: normal;
+  z-index: 7;
+}
+
+.cursor-pigeon .pigeon-quote::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 10px;
+  height: 10px;
+  background: inherit;
+  border-right: 1px solid rgba(17,17,20,.16);
+  border-bottom: 1px solid rgba(17,17,20,.16);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.cursor-pigeon.show-quote .pigeon-quote{
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+
+.cursor-pigeon .pigeon-body{
+  position: absolute;
+  left: 10px;
+  bottom: 18px;
+  width: 104px;
+  height: 60px;
+  z-index: 2;
+  border-radius: 55% 45% 42% 58% / 66% 68% 32% 34%;
+  border: 1px solid rgba(17,17,20,.16);
+  background: linear-gradient(160deg, #dbe3f1 0%, #a9b5c6 62%, #7d8796 100%);
+}
+
+.cursor-pigeon .pigeon-wing{
+  position: absolute;
+  left: 28px;
+  top: 18px;
+  width: 48px;
+  height: 31px;
+  border-radius: 58% 42% 44% 56% / 70% 64% 36% 30%;
+  background: linear-gradient(160deg, #8b95a6 0%, #6c7584 100%);
+  transform: rotate(-9deg);
+  opacity: .95;
+}
+
+.cursor-pigeon .pigeon-head{
+  position: absolute;
+  left: 70px;
+  top: 2px;
+  width: 52px;
+  height: 50px;
+  z-index: 3;
+  border-radius: 54% 46% 48% 52%;
+  border: 1px solid rgba(17,17,20,.16);
+  background: linear-gradient(160deg, #e8edf7 0%, #c2ccda 75%, #a5afbe 100%);
+}
+
+.cursor-pigeon .pigeon-eye{
+  position: absolute;
+  top: 17px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid rgba(17,17,20,.18);
+  background: #fdfdfd;
+  overflow: hidden;
+}
+
+.cursor-pigeon .pigeon-eye.left{ left: 10px; }
+.cursor-pigeon .pigeon-eye.right{ right: 10px; }
+
+.cursor-pigeon .pupil{
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #12131a;
+  transform: translate(0, 0);
+  transition: transform 70ms linear;
+}
+
+.cursor-pigeon .pigeon-beak{
+  position: absolute;
+  left: 50%;
+  bottom: 11px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid #f0a341;
+  transform: translateX(-50%);
+}
+
+.cursor-pigeon .pigeon-feet{
+  position: absolute;
+  left: 56px;
+  bottom: 10px;
+  width: 24px;
+  height: 3px;
+  z-index: 1;
+  border-radius: 4px;
+  background: #d08d42;
+  box-shadow: -14px 0 0 #d08d42, 14px 0 0 #d08d42;
+}
+
+@keyframes pigeon-bob{
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+body.atelier .cursor-pigeon .pigeon-body{
+  border-color: rgba(245,245,247,.18);
+  background: linear-gradient(160deg, #c4cad7 0%, #8d97a7 62%, #697180 100%);
+}
+
+body.atelier .cursor-pigeon .pigeon-head{
+  border-color: rgba(245,245,247,.18);
+  background: linear-gradient(160deg, #dde2ec 0%, #b1baca 74%, #9099a8 100%);
+}
+
+body.atelier .cursor-pigeon .pigeon-quote{
+  border-color: rgba(245,245,247,.22);
+  background: color-mix(in oklab, var(--card), black 20%);
+}
+
+@media (max-width: 700px){
+  .cursor-pigeon{
+    width: 100px;
+    height: 82px;
+    left: .55rem;
+    bottom: .65rem;
+    opacity: .92;
+  }
+
+  .cursor-pigeon .pigeon-quote{
+    font-size: .72rem;
+    max-width: 165px;
+  }
+
+  .mode-toggle{
+    font-size: .9rem;
+    padding: .48rem .72rem;
+  }
+}
 
 /* Layout + type */
 :root{
