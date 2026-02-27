@@ -12,17 +12,19 @@ nocite: |
   @mesana2024evaluating
 ---
 
-## Bio
+## Pascal Jutras-Dubé
 
 ::: {.cardish}
-👋 I’m Pascal Jutras‑Dubé, a PhD student in Computer Science at Purdue University (advised by [Ruqi Zhang](https://ruqizhang.github.io){target="_blank" rel="noopener"}).
-I study sampling and generative modeling through learned stochastic processes, like diffusions and jump processes, and their applications.
-I’m currently interested in the theoretical foundations, parallel decoding, test-time alignment, and multimodality of diffusion large language models (dLLMs).
+PhD student (Computer Science), Purdue University — advised by [Ruqi Zhang](https://ruqizhang.github.io){target="_blank" rel="noopener"}.
+I work on sampling and generative modeling through learned stochastic processes.
 
-Outside the lab, I co-founded [Almost Surely](https://almost-surely.com){target="_blank" rel="noopener"}, a fashion brand for the geek community.
-And when I need a reset, I make fresh pasta: flour, eggs, a little patience: an experiment you can taste.
+Currently into
 
-**Now seeking:** Summer 2026 research / applied scientist PhD internships (ML, generative modeling, sampling, planning, statistics).
+- Diffusion LLM foundations
+- Parallel decoding & efficient sampling
+- Test-time alignment / controllability
+
+**Now seeking:** Fall 2026 research internship.
 :::
 
 <br>
