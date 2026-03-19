@@ -12,8 +12,15 @@ nocite: |
   @mesana2024evaluating
 ---
 
-## Pascal Jutras-Dubé
+::: {.hero-shell}
+<div class="hero-name" role="heading" aria-level="1">Pascal Jutras-Dubé</div>
 
+::: {.hero-intro}
+::: {.hero-intro__media}
+<img src="assets/headshot.jpg" alt="Headshot of Pascal Jutras-Dubé" class="hero-shot">
+:::
+
+::: {.hero-intro__content}
 ::: {.cardish}
 PhD student (Computer Science), Purdue University — advised by [Ruqi Zhang](https://ruqizhang.github.io){target="_blank" rel="noopener"}.
 I work on sampling and generative modeling through learned stochastic processes.
@@ -25,6 +32,9 @@ Currently into
 - Test-time alignment / controllability
 
 **Now seeking:** Fall 2026 research internship.
+:::
+:::
+:::
 :::
 
 <br>

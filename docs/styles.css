@@ -273,6 +273,58 @@ main.content{
   max-width: 980px;
 }
 
+.hero-shell{
+  margin: 1rem 0 2.25rem;
+}
+
+.hero-name{
+  position: relative;
+  z-index: 2;
+  margin: 0 0 -0.45rem;
+  max-width: none;
+  font-size: clamp(2.2rem, 4.3vw, 3.6rem);
+  font-weight: 700;
+  line-height: .98;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+  text-wrap: balance;
+}
+
+.hero-intro{
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+  gap: clamp(1.25rem, 4vw, 2.5rem);
+  align-items: start;
+  padding-top: 1.4rem;
+}
+
+.hero-intro__media{
+  display: flex;
+  justify-content: center;
+}
+
+.hero-intro__media p{
+  margin: 0;
+}
+
+.hero-intro__content{
+  min-width: 0;
+}
+
+.hero-shot{
+  width: min(100%, 240px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 22%;
+  display: block;
+  border-radius: 50%;
+  border: 6px solid color-mix(in oklab, var(--card), var(--bg) 20%);
+  background: color-mix(in oklab, var(--bg), white 12%);
+  box-shadow:
+    0 18px 36px rgba(0,0,0,.14),
+    0 0 0 1px color-mix(in oklab, var(--fg), transparent 90%);
+}
+
 h1, h2, h3{
   letter-spacing: -0.02em;
 }
@@ -317,6 +369,27 @@ h1, h2, h3{
 
 /* Optional: stack only on truly small screens */
 @media (max-width: 700px){
+  .hero-name{
+    margin-bottom: .4rem;
+    font-size: clamp(2.3rem, 11vw, 3.4rem);
+    line-height: .94;
+    white-space: normal;
+  }
+
+  .hero-intro{
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-top: 0;
+  }
+
+  .hero-intro__content{
+    text-align: center;
+  }
+
+  .hero-intro__content .cardish{
+    text-align: left;
+  }
+
   .studio-grid{
     grid-template-columns: 1fr !important;
   }
