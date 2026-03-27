@@ -1,4 +1,4 @@
-/* ---- "Research x Studio" toggle ---- */
+/* ---- Theme toggle ---- */
 :root{
   --bg: #fbfbfd;
   --fg: #111114;
@@ -65,15 +65,20 @@ a:hover{ opacity: .9; }
   border: 1px solid var(--border);
   background: var(--card);
   color: var(--fg);
-  border-radius: 999px;
-  padding: .55rem .8rem;
+  border-radius: 12px;
+  padding: .6rem .95rem;
   font: inherit;
+  font-weight: 500;
   cursor: pointer;
+  transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
 
   box-shadow: 0 12px 30px rgba(0,0,0,.12);
 }
 #modeToggle:hover,
-.mode-toggle:hover{ transform: translateY(-1px); }
+.mode-toggle:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 16px 36px rgba(0,0,0,.16);
+}
 #modeToggle:active,
 .mode-toggle:active{ transform: translateY(0px); }
 

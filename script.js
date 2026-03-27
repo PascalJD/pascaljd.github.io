@@ -8,17 +8,27 @@
     document.body.classList.toggle("atelier", mode === "atelier");
   }
 
+  function syncModeToggle(btn) {
+    const darkModeEnabled = document.body.classList.contains("atelier");
+    btn.textContent = darkModeEnabled ? "Light mode" : "Dark mode";
+    btn.setAttribute(
+      "aria-label",
+      darkModeEnabled ? "Switch to light mode" : "Switch to dark mode"
+    );
+    btn.setAttribute("aria-pressed", String(darkModeEnabled));
+  }
+
   function initModeToggle() {
     const btn = document.createElement("button");
     btn.className = "mode-toggle";
     btn.type = "button";
-    btn.setAttribute("aria-label", "Toggle Research/Studio mode");
-    btn.textContent = "Lab ↔ Atelier";
+    syncModeToggle(btn);
 
     btn.addEventListener("click", () => {
       const next = document.body.classList.contains("atelier") ? "lab" : "atelier";
       apply(next);
       localStorage.setItem(KEY, next);
+      syncModeToggle(btn);
     });
 
     document.body.appendChild(btn);
