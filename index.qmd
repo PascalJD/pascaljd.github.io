@@ -22,16 +22,10 @@ nocite: |
 
 ::: {.hero-intro__content}
 ::: {.cardish}
-PhD student (Computer Science), Purdue University — advised by [Ruqi Zhang](https://ruqizhang.github.io){target="_blank" rel="noopener"}.
-I work on sampling and generative modeling through learned stochastic processes.
+PhD student (Computer Science) at Purdue University, advised by [Ruqi Zhang](https://ruqizhang.github.io){target="_blank" rel="noopener"}.
+I've worked in efficient generative modelling and am now interested in diffusion LLMs.
 
-Currently into
-
-- Diffusion LLM foundations
-- Parallel decoding & efficient sampling
-- Test-time alignment / controllability
-
-**Now seeking:** Fall 2026 research internship.
+**Seeking internships:** Summer 2026, Fall 2026, or Spring 2027.
 :::
 :::
 :::
