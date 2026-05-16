@@ -12,8 +12,6 @@ website:
     left:
       - text: Research
         href: index.qmd
-      - text: Almost Surely
-        href: studio.qmd
       - text: CV
         href: cv.pdf
     tools:

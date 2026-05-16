@@ -3,6 +3,8 @@ link-bibliography: true
 bibliography: publications.bib
 csl: csl/publications.csl
 nocite: |
+  @jutrasdube2026sticky
+  @lee2026neural
   @jutrasdube2025osds
   @punyamoorty2025dynamic
   @jutrasdube2025singlestep
@@ -23,9 +25,9 @@ nocite: |
 ::: {.hero-intro__content}
 ::: {.cardish}
 PhD student (Computer Science) at Purdue University, advised by [Ruqi Zhang](https://ruqizhang.github.io){target="_blank" rel="noopener"}.
-I've worked in efficient generative modelling and am now interested in diffusion LLMs.
+I work on generative modeling and sampling.
 
-**Seeking internships:** Summer 2026, Fall 2026, or Spring 2027.
+**Seeking internships:** Fall 2026, or Spring 2027.
 :::
 :::
 :::
