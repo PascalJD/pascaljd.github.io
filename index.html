@@ -70,22 +70,37 @@
   footer{ margin-top:40px; padding-top:22px; border-top:1px solid var(--hair); font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.05em; color:var(--muted); }
 
   /* Pigeon */
-  #pigeon{ position:fixed; left:26px; bottom:22px; width:118px; height:104px; cursor:pointer; z-index:60; user-select:none; -webkit-tap-highlight-color:transparent; }
+  #pigeon{ position:fixed; left:18px; bottom:16px; width:132px; height:108px; cursor:pointer; z-index:60; user-select:none; -webkit-tap-highlight-color:transparent; filter:drop-shadow(0 10px 20px rgba(0,0,0,.22)); }
+  #pigeon .bob{ position:relative; width:100%; height:100%; animation:bob 2.6s ease-in-out infinite; }
+  @keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-4px); } }
+
   #pigeon .bubble{
-    position:absolute; left:50%; bottom:88px; transform:translateX(-46%) scale(.96);
-    max-width:200px; width:max-content; padding:8px 11px; border-radius:12px;
+    position:absolute; left:60px; bottom:114px;
+    max-width:210px; width:max-content; padding:8px 11px; border-radius:12px;
     border:1px solid var(--border); background:var(--card); color:var(--fg);
     font-family:'JetBrains Mono',monospace; font-size:11px; line-height:1.35;
-    box-shadow:0 8px 22px rgba(0,0,0,.16); opacity:0; pointer-events:none;
-    transition:opacity .25s ease, transform .25s ease;
+    box-shadow:0 8px 22px rgba(0,0,0,.18);
+    opacity:0; transform:translateY(6px) scale(.97); transform-origin:bottom left;
+    pointer-events:none; transition:opacity .22s ease, transform .22s ease;
   }
-  #pigeon.show .bubble{ opacity:1; transform:translateX(-46%) scale(1); }
-  #pigeon .bob{ position:absolute; inset:0; animation:bob 2.6s ease-in-out infinite; }
-  @keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-4px); } }
-  .p{ position:absolute; }
+  #pigeon.show .bubble{ opacity:1; transform:translateY(0) scale(1); }
+
+  #pigeon .body{ position:absolute; left:10px; bottom:18px; width:104px; height:60px; z-index:2; border-radius:55% 45% 42% 58% / 66% 68% 32% 34%; border:1px solid rgba(21,22,28,.16); background:linear-gradient(160deg,#dbe3f1 0%,#a9b5c6 62%,#7d8796 100%); }
+  #pigeon .wing{ position:absolute; left:28px; top:18px; width:48px; height:31px; border-radius:58% 42% 44% 56% / 70% 64% 36% 30%; background:linear-gradient(160deg,#8b95a6 0%,#6c7584 100%); transform:rotate(-9deg); opacity:.95; }
+  #pigeon .head{ position:absolute; left:70px; top:2px; width:52px; height:50px; z-index:3; border-radius:54% 46% 48% 52%; border:1px solid rgba(21,22,28,.16); background:linear-gradient(160deg,#e8edf7 0%,#c2ccda 75%,#a5afbe 100%); }
+  #pigeon .eye{ position:absolute; top:17px; width:15px; height:15px; border-radius:50%; border:1px solid rgba(21,22,28,.18); background:#fdfdfd; overflow:hidden; }
+  #pigeon .eye.left{ left:10px; }
+  #pigeon .eye.right{ right:10px; }
+  #pigeon .pupil{ position:absolute; left:4px; top:4px; width:7px; height:7px; border-radius:50%; background:#12131a; transform:translate(0,0); transition:transform 70ms linear; }
+  #pigeon .beak{ position:absolute; left:50%; bottom:11px; width:0; height:0; border-left:7px solid transparent; border-right:7px solid transparent; border-top:10px solid #f0a341; transform:translateX(-50%); }
+  #pigeon .feet{ position:absolute; left:56px; bottom:10px; width:24px; height:3px; z-index:1; border-radius:4px; background:#d08d42; box-shadow:-14px 0 0 #d08d42, 14px 0 0 #d08d42; }
+
+  html[data-theme="dark"] #pigeon .body{ border-color:rgba(243,244,248,.18); background:linear-gradient(160deg,#c4cad7 0%,#8d97a7 62%,#697180 100%); }
+  html[data-theme="dark"] #pigeon .head{ border-color:rgba(243,244,248,.18); background:linear-gradient(160deg,#dde2ec 0%,#b1baca 74%,#9099a8 100%); }
 
   @media (max-width:640px){
-    #pigeon{ width:96px; height:84px; left:14px; bottom:14px; opacity:.96; }
+    #pigeon{ width:112px; height:92px; left:12px; bottom:12px; opacity:.96; }
+    #pigeon .bubble{ left:50px; max-width:170px; }
     .shot{ width:150px; height:150px; }
   }
 </style>
@@ -97,7 +112,7 @@
       <nav class="nav">
         <a href="https://github.com/PascalJD" target="_blank" rel="noopener">GitHub</a>
         <a href="https://scholar.google.com/citations?hl=en&user=cWjKkUQAAAAJ" target="_blank" rel="noopener">Scholar</a>
-        <a href="/cdn-cgi/l/email-protection#4b3b213e3f392a382f0b3b3e392f3e2e652e2f3e">Email</a>
+        <a href="/cdn-cgi/l/email-protection#9cecf6e9e8eefdeff8dcece9eef8e9f9b2f9f8e9">Email</a>
         <a href="https://www.linkedin.com/in/pascal-jutras-4802a9394/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
         <button class="toggle" id="themeToggle" aria-label="Toggle dark mode">Dark</button>
@@ -117,29 +132,19 @@
     <div class="sec-head"><h2>Selected publications</h2><span class="count" id="pubCount"></span></div>
     <div id="pubs"></div>
 
-    <footer><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bfcfd5cacbcddeccdbffcfcacddbcada91dadbca">[email&#160;protected]</a> · West Lafayette, IN</footer>
+    <footer><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2f5f455a5b5d4e5c4b6f5f5a5d4b5a4a014a4b5a">[email&#160;protected]</a> · West Lafayette, IN</footer>
   </main>
 
-  <div id="pigeon" title="psst… click me">
-    <div class="bubble" id="pigeonBubble"></div>
+  <div id="pigeon" role="button" tabindex="0" aria-label="Click the pigeon" title="psst… click me">
     <div class="bob">
-      <div class="p" style="left:18px;bottom:5px;width:78px;height:11px;border-radius:50%;background:rgba(21,22,28,.16);filter:blur(3px);"></div>
-      <div class="p" style="left:2px;top:42px;width:42px;height:25px;border-radius:42% 58% 50% 50% / 60% 60% 40% 40%;background:linear-gradient(105deg,#6c7588 0%,#9aa3b6 100%);transform:rotate(9deg);"></div>
-      <div class="p" style="left:6px;top:54px;width:30px;height:4px;border-radius:3px;background:rgba(21,22,28,.22);transform:rotate(11deg);"></div>
-      <div class="p" style="left:20px;top:34px;width:74px;height:52px;border-radius:54% 46% 50% 50% / 60% 64% 40% 40%;background:linear-gradient(150deg,#cfd6e6 0%,#9aa3b8 55%,#7c869c 100%);border:1px solid rgba(21,22,28,.1);"></div>
-      <div class="p" style="left:54px;top:46px;width:44px;height:42px;border-radius:60% 50% 55% 50% / 64% 60% 44% 48%;background:linear-gradient(160deg,#e6ebf5 0%,#c2cadb 70%,#a9b2c5 100%);"></div>
-      <div class="p" style="left:30px;top:40px;width:56px;height:41px;border-radius:62% 48% 46% 58% / 74% 66% 38% 32%;background:linear-gradient(150deg,#9aa3b8 0%,#6f7890 70%,#5e6678 100%);transform:rotate(-6deg);"></div>
-      <div class="p" style="left:41px;top:65px;width:38px;height:3px;border-radius:3px;background:rgba(21,22,28,.34);transform:rotate(-6deg);"></div>
-      <div class="p" style="left:43px;top:71px;width:33px;height:3px;border-radius:3px;background:rgba(21,22,28,.26);transform:rotate(-6deg);"></div>
-      <div class="p" style="left:70px;top:30px;width:22px;height:24px;border-radius:50%;background:linear-gradient(135deg,#3bbf9a 0%,#5a7be0 45%,#b15ad8 100%);opacity:.78;"></div>
-      <div class="p" style="left:78px;top:13px;width:36px;height:34px;border-radius:52% 50% 48% 50%;background:linear-gradient(160deg,#e1e6f2 0%,#bcc4d6 72%,#9ca5ba 100%);border:1px solid rgba(21,22,28,.1);"></div>
-      <div class="p" style="left:94px;top:23px;width:12px;height:12px;border-radius:50%;background:#e8a23a;border:1px solid rgba(21,22,28,.22);"><div class="p" style="left:3px;top:3px;width:6px;height:6px;border-radius:50%;background:#1a1206;"></div><div class="p" style="left:4px;top:3px;width:2.5px;height:2.5px;border-radius:50%;background:#fff;"></div></div>
-      <div class="p" style="left:107px;top:23px;width:8px;height:7px;border-radius:50%;background:#f1efe7;"></div>
-      <div class="p" style="left:111px;top:27px;width:13px;height:7px;border-radius:28% 72% 64% 36%;background:linear-gradient(90deg,#8d8678,#5d574c);transform:rotate(7deg);"></div>
-      <div class="p" style="left:56px;bottom:1px;width:16px;height:2.5px;border-radius:2px;background:#d6738a;"></div>
-      <div class="p" style="left:69px;bottom:1px;width:16px;height:2.5px;border-radius:2px;background:#cf6a82;"></div>
-      <div class="p" style="left:63px;bottom:2px;width:2.5px;height:12px;border-radius:2px;background:#d6738a;"></div>
-      <div class="p" style="left:75px;bottom:2px;width:2.5px;height:12px;border-radius:2px;background:#cf6a82;"></div>
+      <div class="bubble" id="pigeonBubble"></div>
+      <div class="head">
+        <span class="eye left"><span class="pupil"></span></span>
+        <span class="eye right"><span class="pupil"></span></span>
+        <span class="beak"></span>
+      </div>
+      <div class="body"><span class="wing"></span></div>
+      <span class="feet"></span>
     </div>
   </div>
 
@@ -206,13 +211,35 @@
   });
 
   // Pigeon
-  var pigeon = document.getElementById('pigeon'), bubble = document.getElementById('pigeonBubble'), timer = null;
-  pigeon.addEventListener('click', function(){
+  var pigeon = document.getElementById('pigeon'), bubble = document.getElementById('pigeonBubble'), pTimer = null;
+  function popQuote(){
     bubble.textContent = QUOTES[Math.floor(Math.random() * QUOTES.length)];
     pigeon.classList.add('show');
-    clearTimeout(timer);
-    timer = setTimeout(function(){ pigeon.classList.remove('show'); }, 3800);
-  });
+    clearTimeout(pTimer);
+    pTimer = setTimeout(function(){ pigeon.classList.remove('show'); }, 3800);
+  }
+  pigeon.addEventListener('click', popQuote);
+  pigeon.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); popQuote(); } });
+
+  // Pupils follow the cursor
+  var MAX_OFF = 4.5;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var eyes = Array.prototype.slice.call(pigeon.querySelectorAll('.eye'));
+  function moveEyes(cx, cy){
+    eyes.forEach(function(eye){
+      var pu = eye.querySelector('.pupil'); if(!pu) return;
+      var r = eye.getBoundingClientRect();
+      var dx = cx - (r.left + r.width / 2), dy = cy - (r.top + r.height / 2);
+      var dist = Math.hypot(dx, dy) || 1;
+      var s = Math.min(MAX_OFF, dist) / dist;
+      pu.style.transform = 'translate(' + (dx * s).toFixed(2) + 'px,' + (dy * s).toFixed(2) + 'px)';
+    });
+  }
+  if(eyes.length && !reduceMotion){
+    window.addEventListener('pointermove', function(e){ moveEyes(e.clientX, e.clientY); }, { passive:true });
+    window.addEventListener('touchmove', function(e){ var t = e.touches && e.touches[0]; if(t) moveEyes(t.clientX, t.clientY); }, { passive:true });
+    document.addEventListener('mouseleave', function(){ eyes.forEach(function(eye){ var pu = eye.querySelector('.pupil'); if(pu) pu.style.transform = 'translate(0,0)'; }); }, { passive:true });
+  }
 </script>
 </body>
 </html>
