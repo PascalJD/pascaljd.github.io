@@ -12,9 +12,9 @@ quarto preview
 
 ## Publish (docs/ workflow)
 ```bash
-quarto render
+cp index.html docs/index.html
 git add -A
-git commit -m "Render site"
+git commit -m "Update homepage"
 git push
 ```
 

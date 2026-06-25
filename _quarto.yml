@@ -2,31 +2,13 @@ project:
   type: website
   output-dir: docs
   resources:
+    - index.html
     - cv.pdf
     - script.js
     - assets/**
 
 website:
   title: "Pascal Jutras-Dubé"
-  navbar:
-    left:
-      - text: Research
-        href: index.qmd
-      - text: CV
-        href: cv.pdf
-    tools:
-      - icon: github
-        href: https://github.com/PascalJD
-        aria-label: GitHub
-      - icon: mortarboard
-        href: https://scholar.google.com/citations?hl=en&user=cWjKkUQAAAAJ
-        aria-label: Google Scholar
-      - icon: envelope
-        href: mailto:pjutrasd@purdue.edu
-        aria-label: Email
-      - icon: linkedin
-        href: https://www.linkedin.com/in/pascal-jutras-4802a9394/
-        aria-label: LinkedIn
 
 format:
   html:
