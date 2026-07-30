@@ -26,38 +26,58 @@
     transition:background .3s ease, color .3s ease;
   }
   a{ color:inherit; }
-  .wrap{ max-width:880px; margin:0 auto; padding:clamp(40px,6vw,72px) clamp(20px,5vw,76px) 88px; }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:clamp(28px,4vw,48px) clamp(20px,5vw,64px) 88px; }
   .mono{ font-family:'JetBrains Mono',monospace; }
 
-  .topbar{
-    display:flex; align-items:center; justify-content:space-between; gap:24px;
-    flex-wrap:wrap; padding-bottom:28px; border-bottom:1px solid var(--hair);
-  }
-  .topbar .name{ font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); }
-  .nav{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
-  .nav a{ font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.04em; color:var(--muted); text-decoration:none; transition:color .15s; }
-  .nav a:hover{ color:var(--accent); }
+  .top{ display:flex; justify-content:flex-end; }
   .toggle{
     font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
     cursor:pointer; background:transparent; color:var(--fg);
     border:1px solid var(--border); border-radius:999px; padding:5px 12px;
   }
 
-  .hero{ display:flex; gap:clamp(28px,5vw,52px); align-items:flex-start; flex-wrap:wrap; margin-top:clamp(36px,6vw,56px); }
-  .hero__content{ flex:1 1 320px; min-width:0; }
-  .eyebrow{ font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:20px; }
-  h1{ font-family:'Schibsted Grotesk',sans-serif; font-weight:800; font-size:clamp(40px,7vw,62px); line-height:.96; letter-spacing:-.035em; margin:0 0 24px; }
-  .bio{ font-size:18px; line-height:1.6; color:var(--muted); max-width:30em; margin:0 0 24px; }
-  .bio a{ color:var(--fg); text-decoration:none; border-bottom:1px solid var(--accent); padding-bottom:1px; }
-  .status{ display:inline-flex; align-items:center; gap:10px; border:1px solid var(--border); border-radius:999px; padding:8px 15px; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.04em; color:var(--fg); }
-  .status .dot{ width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px color-mix(in oklab, var(--accent), transparent 78%); }
-  .shot{ width:188px; height:188px; border-radius:50%; object-fit:cover; object-position:center 80%; border:1px solid var(--border); box-shadow:0 16px 34px rgba(0,0,0,.12); flex-shrink:0; }
+  /* Two-column layout: identity rail + publications */
+  .layout{
+    display:grid; grid-template-columns:minmax(300px,360px) minmax(0,1fr);
+    gap:clamp(44px,7vw,96px); align-items:start; margin-top:clamp(20px,3vw,36px);
+  }
+  .side{ position:sticky; top:36px; }
 
-  .sec-head{ display:flex; align-items:baseline; gap:14px; margin-top:clamp(48px,7vw,64px); margin-bottom:4px; }
+  .shot{ width:128px; height:128px; border-radius:50%; object-fit:cover; object-position:center 80%; border:1px solid var(--border); box-shadow:0 14px 30px rgba(0,0,0,.12); }
+  .eyebrow{ font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin:26px 0 14px; }
+  h1{ font-family:'Schibsted Grotesk',sans-serif; font-weight:800; font-size:clamp(34px,4.5vw,44px); line-height:1.02; letter-spacing:-.03em; margin:0 0 18px; }
+  .bio{ font-size:16.5px; line-height:1.65; color:var(--muted); margin:0 0 22px; }
+  .bio a{ color:var(--fg); text-decoration:none; border-bottom:1px solid var(--accent); padding-bottom:1px; }
+  .status{ display:inline-flex; align-items:center; gap:10px; border:1px solid var(--border); border-radius:999px; padding:7px 13px; font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:.04em; color:var(--fg); }
+  .status .dot{ width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px color-mix(in oklab, var(--accent), transparent 78%); }
+
+  .links{ display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+  .links a{
+    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.04em;
+    color:var(--muted); border:1px solid var(--border); border-radius:999px; padding:6px 13px;
+    text-decoration:none; transition:color .15s, border-color .15s;
+  }
+  .links a:hover{ color:var(--accent); border-color:color-mix(in oklab, var(--accent), transparent 40%); }
+
+  /* Diffusion band */
+  .sde-band{ position:relative; height:80px; margin-top:30px; }
+  .sde-band canvas{
+    position:absolute; inset:0; width:100%; height:100%; display:block; opacity:1; transition:opacity .9s ease;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+  }
+  .sde-label{ position:absolute; right:0; bottom:0; font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.04em; color:var(--muted); opacity:.55; pointer-events:none; }
+
+  .side__foot{ margin-top:26px; padding-top:18px; border-top:1px solid var(--hair); font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.05em; color:var(--muted); }
+  .side__foot a{ text-decoration:none; }
+
+  .sec-head{ display:flex; align-items:baseline; gap:14px; margin:0 0 4px; }
   .sec-head h2{ font-family:'Schibsted Grotesk',sans-serif; font-weight:700; font-size:22px; letter-spacing:-.02em; margin:0; }
   .sec-head .count{ font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted); }
 
   .pub{ display:flex; gap:26px; padding:22px 0; border-top:1px solid var(--hair); }
+  .pub:first-of-type{ border-top:none; }
   .pub__year{ font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--accent); padding-top:3px; min-width:42px; }
   .pub__body{ flex:1; min-width:0; }
   .pub__title{ font-size:18px; font-weight:600; color:var(--fg); text-decoration:none; letter-spacing:-.01em; line-height:1.34; display:block; transition:color .15s; }
@@ -67,86 +87,52 @@
   .pub__venue{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
   .pub__tag{ font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); border:1px solid color-mix(in oklab, var(--accent), transparent 70%); border-radius:999px; padding:2px 9px; }
 
-  footer{ margin-top:40px; padding-top:22px; border-top:1px solid var(--hair); font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.05em; color:var(--muted); }
-
-  /* Pigeon */
-  #pigeon{ position:fixed; left:18px; bottom:16px; width:132px; height:108px; cursor:pointer; z-index:60; user-select:none; -webkit-tap-highlight-color:transparent; filter:drop-shadow(0 10px 20px rgba(0,0,0,.22)); }
-  #pigeon .bob{ position:relative; width:100%; height:100%; animation:bob 2.6s ease-in-out infinite; }
-  @keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-4px); } }
-
-  #pigeon .bubble{
-    position:absolute; left:60px; bottom:114px;
-    max-width:210px; width:max-content; padding:8px 11px; border-radius:12px;
-    border:1px solid var(--border); background:var(--card); color:var(--fg);
-    font-family:'JetBrains Mono',monospace; font-size:11px; line-height:1.35;
-    box-shadow:0 8px 22px rgba(0,0,0,.18);
-    opacity:0; transform:translateY(6px) scale(.97); transform-origin:bottom left;
-    pointer-events:none; transition:opacity .22s ease, transform .22s ease;
+  @media (max-width:900px){
+    .layout{ grid-template-columns:1fr; gap:0; }
+    .side{ position:static; }
+    .sec-head{ margin-top:clamp(44px,9vw,60px); }
   }
-  #pigeon.show .bubble{ opacity:1; transform:translateY(0) scale(1); }
-
-  #pigeon .body{ position:absolute; left:10px; bottom:18px; width:104px; height:60px; z-index:2; border-radius:55% 45% 42% 58% / 66% 68% 32% 34%; border:1px solid rgba(21,22,28,.16); background:linear-gradient(160deg,#dbe3f1 0%,#a9b5c6 62%,#7d8796 100%); }
-  #pigeon .wing{ position:absolute; left:28px; top:18px; width:48px; height:31px; border-radius:58% 42% 44% 56% / 70% 64% 36% 30%; background:linear-gradient(160deg,#8b95a6 0%,#6c7584 100%); transform:rotate(-9deg); opacity:.95; }
-  #pigeon .head{ position:absolute; left:70px; top:2px; width:52px; height:50px; z-index:3; border-radius:54% 46% 48% 52%; border:1px solid rgba(21,22,28,.16); background:linear-gradient(160deg,#e8edf7 0%,#c2ccda 75%,#a5afbe 100%); }
-  #pigeon .eye{ position:absolute; top:17px; width:15px; height:15px; border-radius:50%; border:1px solid rgba(21,22,28,.18); background:#fdfdfd; overflow:hidden; }
-  #pigeon .eye.left{ left:10px; }
-  #pigeon .eye.right{ right:10px; }
-  #pigeon .pupil{ position:absolute; left:4px; top:4px; width:7px; height:7px; border-radius:50%; background:#12131a; transform:translate(0,0); transition:transform 70ms linear; }
-  #pigeon .beak{ position:absolute; left:50%; bottom:11px; width:0; height:0; border-left:7px solid transparent; border-right:7px solid transparent; border-top:10px solid #f0a341; transform:translateX(-50%); }
-  #pigeon .feet{ position:absolute; left:56px; bottom:10px; width:24px; height:3px; z-index:1; border-radius:4px; background:#d08d42; box-shadow:-14px 0 0 #d08d42, 14px 0 0 #d08d42; }
-
-  html[data-theme="dark"] #pigeon .body{ border-color:rgba(243,244,248,.18); background:linear-gradient(160deg,#c4cad7 0%,#8d97a7 62%,#697180 100%); }
-  html[data-theme="dark"] #pigeon .head{ border-color:rgba(243,244,248,.18); background:linear-gradient(160deg,#dde2ec 0%,#b1baca 74%,#9099a8 100%); }
-
   @media (max-width:640px){
-    #pigeon{ width:112px; height:92px; left:12px; bottom:12px; opacity:.96; }
-    #pigeon .bubble{ left:50px; max-width:170px; }
-    .shot{ width:150px; height:150px; }
+    .sde-band{ height:72px; }
+    .sde-label{ font-size:9.5px; }
   }
 </style>
 </head>
 <body>
   <main class="wrap">
-    <header class="topbar">
-      <div class="name">Pascal Jutras-Dubé</div>
-      <nav class="nav">
-        <a href="https://github.com/PascalJD" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://scholar.google.com/citations?hl=en&user=cWjKkUQAAAAJ" target="_blank" rel="noopener">Scholar</a>
-        <a href="mailto:pjutrasd@purdue.edu">Email</a>
-        <a href="https://www.linkedin.com/in/pascal-jutras-4802a9394/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
-        <button class="toggle" id="themeToggle" aria-label="Toggle dark mode">Dark</button>
-      </nav>
-    </header>
+    <div class="top">
+      <button class="toggle" id="themeToggle" aria-label="Toggle dark mode">Dark</button>
+    </div>
 
-    <section class="hero">
-      <div class="hero__content">
+    <div class="layout">
+      <aside class="side">
+        <img class="shot" src="assets/headshot.jpg" alt="Pascal Jutras-Dubé">
         <div class="eyebrow">PhD · Computer Science · Purdue</div>
         <h1>Pascal<br>Jutras-Dubé</h1>
         <p class="bio">PhD student in Computer Science at Purdue University, advised by <a href="https://ruqizhang.github.io" target="_blank" rel="noopener">Ruqi Zhang</a>. I work on generative modeling and sampling.</p>
         <div class="status"><span class="dot"></span> Seeking internships — Fall 2026 / Spring 2027</div>
-      </div>
-      <img class="shot" src="assets/headshot.jpg" alt="Pascal Jutras-Dubé">
-    </section>
+        <nav class="links" aria-label="Profiles">
+          <a href="https://github.com/PascalJD" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://scholar.google.com/citations?hl=en&user=cWjKkUQAAAAJ" target="_blank" rel="noopener">Scholar</a>
+          <a href="mailto:pjutrasd@purdue.edu">Email</a>
+          <a href="https://www.linkedin.com/in/pascal-jutras-4802a9394/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+        </nav>
 
-    <div class="sec-head"><h2>Selected publications</h2><span class="count" id="pubCount"></span></div>
-    <div id="pubs"></div>
+        <div class="sde-band" id="sdeBand" aria-hidden="true" title="a sample path, annealing">
+          <canvas id="sdeCanvas"></canvas>
+          <span class="sde-label">dXₜ = −θ(Xₜ−μₜ)dt + σₜdWₜ</span>
+        </div>
 
-    <footer><a href="mailto:pjutrasd@purdue.edu">pjutrasd@purdue.edu</a> · West Lafayette, IN</footer>
-  </main>
+        <div class="side__foot"><a href="mailto:pjutrasd@purdue.edu">pjutrasd@purdue.edu</a> · West Lafayette, IN</div>
+      </aside>
 
-  <div id="pigeon" role="button" tabindex="0" aria-label="Click the pigeon" title="psst… click me">
-    <div class="bob">
-      <div class="bubble" id="pigeonBubble"></div>
-      <div class="head">
-        <span class="eye left"><span class="pupil"></span></span>
-        <span class="eye right"><span class="pupil"></span></span>
-        <span class="beak"></span>
-      </div>
-      <div class="body"><span class="wing"></span></div>
-      <span class="feet"></span>
+      <section>
+        <div class="sec-head"><h2>Selected publications</h2><span class="count" id="pubCount"></span></div>
+        <div id="pubs"></div>
+      </section>
     </div>
-  </div>
+  </main>
 
 <script>
   var PUBS = [
@@ -159,30 +145,6 @@
     { year:'2024', title:'Copula-based transferable models for synthetic population generation', authors:'P. Jutras-Dubé, M. B. Al-Khasawneh, Z. Yang, J. Bas, F. Bastin, C. Cirillo', venue:'Transportation Research Part C', tag:'', url:'https://arxiv.org/abs/2302.09193' },
     { year:'2024', title:'Adaptive planning with generative models under uncertainty', authors:'P. Jutras-Dubé, R. Zhang, A. Bera', venue:'IROS', tag:'', url:'https://arxiv.org/abs/2408.01510' },
     { year:'2024', title:'Evaluating the risk of re-identification in data release strategies: An attacker-centric approach', authors:'P. Mesana, P. Jutras-Dubé, J. Crowe, G. Vial, G. Caporossi', venue:'HICSS', tag:'', url:'' }
-  ];
-
-  var QUOTES = [
-    "Pigeonhole principle: 9 papers, 8 venues — two of us are roommates.",
-    "By the pigeonhole principle, two of my feathers are identical. I checked.",
-    "There are more pigeons than holes. This is, frankly, my whole identity.",
-    "Pigeonhole principle: if you have me, you have at least one pigeon.",
-    "n+1 pigeons, n holes — somebody is getting a co-first authorship.",
-    "Have you tried turning the learning rate down?",
-    "My flight path is greedy. My landing is not optimal.",
-    "I sample from the posterior. Also from your lunch.",
-    "I'm not in a local minimum, I just like this bench.",
-    "Gradient descent, but I just waddle toward the food.",
-    "P vs NP? P for pigeon. Obviously.",
-    "Attention is all you need. Also snacks.",
-    "I overfit to one breadcrumb and regret nothing.",
-    "Recursion: a pigeon pecks a pigeon pecks a pigeon…",
-    "Cache invalidation, naming things, and finding crumbs.",
-    "I'm Markov: where I peck next depends only on where I am.",
-    "Diffusion model: I start as noise, end as a pigeon. Relatable.",
-    "NP-hard, but the breadcrumbs are NP-soft.",
-    "Reviewer 2 says my coo lacks novelty.",
-    "I'd explain backprop, but my error keeps propagating backward.",
-    "O(1) to summon, O(coo) to dismiss."
   ];
 
   // Publications
@@ -210,36 +172,80 @@
     syncBtn();
   });
 
-  // Pigeon
-  var pigeon = document.getElementById('pigeon'), bubble = document.getElementById('pigeonBubble'), pTimer = null;
-  function popQuote(){
-    bubble.textContent = QUOTES[Math.floor(Math.random() * QUOTES.length)];
-    pigeon.classList.add('show');
-    clearTimeout(pTimer);
-    pTimer = setTimeout(function(){ pigeon.classList.remove('show'); }, 3800);
-  }
-  pigeon.addEventListener('click', popQuote);
-  pigeon.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); popQuote(); } });
+  // Diffusion trajectory — blue pen stroke
+  (function(){
+    var band = document.getElementById('sdeBand'); if(!band) return;
+    var cv = document.getElementById('sdeCanvas'), ctx = cv.getContext('2d');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var pts = [], idx = 1, raf = null, hold = null, fadeT = null, ink = '#4f46e5';
 
-  // Pupils follow the cursor
-  var MAX_OFF = 4.5;
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var eyes = Array.prototype.slice.call(pigeon.querySelectorAll('.eye'));
-  function moveEyes(cx, cy){
-    eyes.forEach(function(eye){
-      var pu = eye.querySelector('.pupil'); if(!pu) return;
-      var r = eye.getBoundingClientRect();
-      var dx = cx - (r.left + r.width / 2), dy = cy - (r.top + r.height / 2);
-      var dist = Math.hypot(dx, dy) || 1;
-      var s = Math.min(MAX_OFF, dist) / dist;
-      pu.style.transform = 'translate(' + (dx * s).toFixed(2) + 'px,' + (dy * s).toFixed(2) + 'px)';
-    });
-  }
-  if(eyes.length && !reduceMotion){
-    window.addEventListener('pointermove', function(e){ moveEyes(e.clientX, e.clientY); }, { passive:true });
-    window.addEventListener('touchmove', function(e){ var t = e.touches && e.touches[0]; if(t) moveEyes(t.clientX, t.clientY); }, { passive:true });
-    document.addEventListener('mouseleave', function(){ eyes.forEach(function(eye){ var pu = eye.querySelector('.pupil'); if(pu) pu.style.transform = 'translate(0,0)'; }); }, { passive:true });
-  }
+    function gauss(){ return (Math.random() + Math.random() + Math.random()) - 1.5; }
+
+    function size(){
+      var r = band.getBoundingClientRect(), dpr = Math.min(window.devicePixelRatio || 1, 2);
+      cv.width = Math.max(1, Math.round(r.width * dpr));
+      cv.height = Math.max(1, Math.round(r.height * dpr));
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      return { w: r.width, h: r.height };
+    }
+
+    // OU-style path: noisy at t=0, annealing to a smooth curve at t=1
+    function gen(w, h){
+      var n = Math.max(260, Math.round(w / 2.6));
+      var mid = h * 0.55, y = mid + gauss() * h * 0.18, wv = 0, arr = [];
+      for(var i = 0; i <= n; i++){
+        var t = i / n;
+        var anneal = Math.pow(1 - t, 1.35);
+        var sigma = h * 0.16 * anneal + h * 0.004;
+        var theta = 0.02 + 0.22 * t * t;
+        var target = mid + Math.sin(t * 6.8 + 1.2) * h * 0.1 * (1 - anneal);
+        y += -theta * (y - target) + gauss() * sigma;
+        y = Math.max(6, Math.min(h - 6, y));
+        wv += (Math.random() - 0.5) * 0.22; wv = Math.max(-0.4, Math.min(0.5, wv));
+        arr.push({ x: t * w, y: y, w: Math.max(0.9, Math.min(3, 1.15 + 0.85 * anneal + wv)) });
+      }
+      return arr;
+    }
+
+    function seg(i){
+      var a = pts[i - 1], b = pts[i];
+      ctx.lineWidth = b.w;
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+    }
+
+    function step(){
+      ctx.strokeStyle = ink; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.globalAlpha = 0.92;
+      var k = Math.max(1, Math.round(pts.length / 420));
+      for(var j = 0; j < k && idx < pts.length; j++, idx++) seg(idx);
+      if(idx < pts.length){ raf = requestAnimationFrame(step); }
+      else {
+        hold = setTimeout(function(){
+          cv.style.opacity = '0';
+          fadeT = setTimeout(restart, 1000);
+        }, 3200);
+      }
+    }
+
+    function restart(){
+      cancelAnimationFrame(raf); clearTimeout(hold); clearTimeout(fadeT);
+      var d = size();
+      ctx.clearRect(0, 0, d.w, d.h);
+      ink = (getComputedStyle(document.documentElement).getPropertyValue('--accent') || '#4f46e5').trim();
+      pts = gen(d.w, d.h); idx = 1;
+      cv.style.opacity = '1';
+      if(reduce){
+        ctx.strokeStyle = ink; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.globalAlpha = 0.92;
+        while(idx < pts.length) seg(idx++);
+      } else {
+        raf = requestAnimationFrame(step);
+      }
+    }
+
+    var rz; window.addEventListener('resize', function(){ clearTimeout(rz); rz = setTimeout(restart, 180); });
+    var tb = document.getElementById('themeToggle');
+    if(tb) tb.addEventListener('click', function(){ setTimeout(restart, 60); });
+    restart();
+  })();
 </script>
 </body>
 </html>
