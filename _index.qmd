@@ -3,6 +3,7 @@ link-bibliography: true
 bibliography: publications.bib
 csl: csl/publications.csl
 nocite: |
+  @jutrasdube2026masked
   @jutrasdube2026sticky
   @lee2026neural
   @jutrasdube2025osds
