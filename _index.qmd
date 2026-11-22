@@ -28,7 +28,7 @@ nocite: |
 PhD student (Computer Science) at Purdue University, advised by [Ruqi Zhang](https://ruqizhang.github.io){target="_blank" rel="noopener"}.
 I work on generative modeling and sampling.
 
-**Seeking internships:** Fall 2026, or Spring 2027.
+**Seeking internships:** Spring 2027 and Summer 2027.
 :::
 :::
 :::
